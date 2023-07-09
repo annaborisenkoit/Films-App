@@ -9,23 +9,26 @@ const options = {
   },
 };
 
-// fetch(url + 'top', options)
-//   .then((res) => res.json())
-//   .then((json) => console.log(json))
-//   .catch((err) => console.log(err));
-
 const filmsWrapper = document.querySelector('.films');
-console.log(filmsWrapper);
+
+async function fetchData(url, options) {
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data;
+}
 
 async function fetchAndRenderFilms() {
-  const response = await fetch(url + 'top', options);
-  const data = await response.json();
-  console.log(data);
-  console.log(data.films);
+  // const response = await fetch(url + 'top', options);
+  // const data = await response.json();
 
-  for (film of data.films) {
+  const data = await fetchData(url + 'top', options);
+
+  renderFilms(data.films);
+}
+
+function renderFilms(films) {
+  for (film of films) {
     //в цикле обходим массив и выводим каждый фильм на экран
-    console.log(film);
 
     const html = `<div class="card">
           <img src=${film.posterUrlPreview} alt="Cover" class="card__img" />
