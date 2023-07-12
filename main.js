@@ -1,3 +1,4 @@
+//настройки
 const apiKey = 'e319e0fe-b161-453a-8ff2-1626fc7291ef';
 
 const url = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/';
@@ -8,15 +9,10 @@ const options = {
     'Content-Type': 'application/json',
   },
 };
-
+//DOM элементы
 const filmsWrapper = document.querySelector('.films');
 
-async function fetchData(url, options) {
-  const response = await fetch(url, options);
-  const data = await response.json();
-  return data;
-}
-
+//получение и вывод top 250 фильмов
 async function fetchAndRenderFilms() {
   // const response = await fetch(url + 'top', options);
   // const data = await response.json();
@@ -24,6 +20,12 @@ async function fetchAndRenderFilms() {
   const data = await fetchData(url + 'top', options);
 
   renderFilms(data.films);
+}
+
+async function fetchData(url, options) {
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data;
 }
 
 function renderFilms(films) {

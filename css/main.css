@@ -17,6 +17,12 @@ body {
   display: none !important;
 }
 
+.search {
+  padding-top: 50px;
+  height: 300px;
+  border: 1px solid #000000;
+}
+
 .container-left {
   padding: 25px 15px 100px;
   width: 930px;
