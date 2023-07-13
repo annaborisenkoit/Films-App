@@ -23,6 +23,38 @@ body {
   border: 1px solid #000000;
 }
 
+.add {
+  display: flex;
+  gap: 24px;
+}
+
+.add__title {
+  width: 500px;
+  height: 60px;
+  padding: 0 15px;
+  font-size: 32px;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  overflow-wrap: break-word;
+}
+
+.add__button {
+  width: 250px;
+  height: 60px;
+  /*  background: #0094ff;*/
+  background-color: rgb(16, 85, 205);
+  border: none;
+  border-radius: 6px;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+}
+
+.films .add__button {
+  background: #000000;
+}
+
 .container-left {
   padding: 25px 15px 100px;
   width: 930px;
