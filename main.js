@@ -1,3 +1,10 @@
+//DOM элементы
+const inputNode = document.querySelector('.js-add__title');
+const btnNode = document.querySelector('.js-add__button');
+const filmsWrapper = document.querySelector('.films');
+
+let filmsArr = [];
+
 //настройки
 const apiKey = 'e319e0fe-b161-453a-8ff2-1626fc7291ef';
 
@@ -9,8 +16,6 @@ const options = {
     'Content-Type': 'application/json',
   },
 };
-//DOM элементы
-const filmsWrapper = document.querySelector('.films');
 
 //получение и вывод top 250 фильмов
 async function fetchAndRenderFilms() {

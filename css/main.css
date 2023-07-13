@@ -36,7 +36,8 @@ body {
   border: 1px solid #000;
   background: rgba(255, 255, 255, 0.2);
   outline: none;
-  overflow-wrap: break-word;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 .add__button {
@@ -208,5 +209,9 @@ body {
   }
   .card {
     width: 100%;
+  }
+
+  .add__title {
+    width: 320px;
   }
 }
