@@ -48,3 +48,26 @@ function renderFilms(films) {
 }
 
 fetchAndRenderFilms().catch((err) => console.log(err));
+
+movieSearchBtnNode.addEventListener('click', function () {
+  const movieName = movieSearchNode.value;
+  const url = `https://www.omdbapi.com/?s=${movieName}&apikey=${key}`;
+  if (movieName.length <= 0) {
+    searchResultNode.innerHTML = `<h3 class="msg">Please enter a movie name...</h3>`;
+  } else {
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        if (data.Response === 'False') {
+          renderNoFindings();
+        } else {
+          renderSearchResult(data);
+        }
+      })
+      .catch((error) => {
+        console.error('Error while fetch:', error);
+        searchResultNode.innerHTML = `<h3 class="msg">An error occured. Please try again later.`;
+      });
+  }
+});
