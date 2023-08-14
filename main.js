@@ -86,7 +86,37 @@ const movieInputFieldNode = document.querySelector('.js-add__title');
 const movieSearchButtonNode = document.querySelector('.js-add__button');
 //список фильмов
 const movieListOutputNode = document.querySelector('.js-films');
+//ошибка
+const errorOutputNode = document.querySelector('.js-error');
 
 //Функции
 const init = () => (movieListOutputNode.innerText = 'Здесь пока пусто');
 init();
+
+const checkInput = () => (!movieInputFieldNode.value.trim() ? false : true);
+
+const changeLocation = (movieID) =>
+  (window.location.href = `movieInfo.html?id=${movieID}`);
+
+const clearMovieInput = () => (movieInputFieldNode.value = '');
+
+const putFocusToInput = () => movieInputFieldNode.focus();
+
+const renderError = (message_error) => {
+  errorOutputNode.innerText = `${message_error}`;
+  clearMovieInput();
+  putFocusToInput();
+};
+
+const renderSearchResult = (searchResult) => {
+  let searchResultMarkup = '';
+  searchResult.Search.forEach((movie) => {
+    let movieImage = movie['Poster'];
+    movieImage === 'n/a'
+      ? (movieImage = 'resourses/Movie & Film Poster.jpg')
+      : (movieImage = movie['Poster']);
+    searchResultMarkup += `
+      <
+      `;
+  });
+};
