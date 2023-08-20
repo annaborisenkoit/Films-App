@@ -23,14 +23,13 @@ async function fetchData(movieName) {
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
-      console.log(data.Search);
-      console.log(data.Search[0]);
-      console.log(data.Search[0].Title);
-      console.log(data.Search[0].Year);
-      const data1 = data;
+      // console.log(data.Search);
+      // console.log(data.Search[0]);
+      // console.log(data.Search[0].Title);
+      // console.log(data.Search[0].Year);
+      // searchResult = data.Search;
+      // console.log(searchResult);
     });
-
-  //return data1;
 }
 
 //Выполняемый код
