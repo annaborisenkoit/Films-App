@@ -27,8 +27,6 @@ async function fetchData(movieName) {
       // console.log(data.Search[0]);
       // console.log(data.Search[0].Title);
       // console.log(data.Search[0].Year);
-      // searchResult = data.Search;
-      // console.log(searchResult);
     });
 }
 
@@ -47,5 +45,5 @@ btnNode.addEventListener('click', function () {
   `;
 
   const response = fetchData(movieName);
-  console.log('result= ', response);
+  // console.log('result= ', response);
 });
