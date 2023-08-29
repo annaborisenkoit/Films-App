@@ -34,6 +34,7 @@ body {
   padding: 0 15px;
   font-size: 32px;
   border: 1px solid #000;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.2);
   outline: none;
   hyphens: auto;
@@ -219,6 +220,10 @@ body {
   }
 
   .add__title {
-    width: 320px;
+    width: 100%;
+  }
+
+  .add__button {
+    width: 100%;
   }
 }
