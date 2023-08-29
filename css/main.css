@@ -59,13 +59,15 @@ body {
 
 .container-left {
   padding: 25px 15px 100px;
+  margin: 0 auto;
+
   width: 930px;
   min-height: 100vh;
 
   border-right: 1px solid #162344;
 }
 
-.container-right {
+/* .container-right {
   position: fixed;
   left: 930px;
   top: 0;
@@ -76,7 +78,7 @@ body {
 
   background-color: rgba(5, 56, 185, 0.2);
   border-right: 1px solid #162344;
-}
+} */
 
 .title-1 {
   margin-bottom: 30px;
