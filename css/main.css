@@ -91,11 +91,13 @@ body {
   row-gap: 30px;
 
   margin-bottom: 30px;
+  margin-top: 100px;
 }
 
 .card {
   overflow: hidden;
   padding-bottom: 15px;
+  padding-top: 20px;
   width: 200px;
   border-radius: 6px;
   background-color: rgb(22, 22, 22);
@@ -197,6 +199,11 @@ body {
 }
 
 @media (max-width: 767px) {
+  .add {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
   .films {
     flex-direction: column;
   }
