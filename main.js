@@ -1,49 +1,42 @@
 //Задаем константы
 const apiKey = '25f7e215';
 
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     'X-API-KEY': apiKey,
-//     'Content-Type': 'application/json',
-//   },
-// };
-
+//DOM элементы
 //поле ввода
 const inputNode = document.querySelector('.js-add__title');
 //кнопка поиска
 const btnNode = document.querySelector('.js-add__button');
 //список фильмов
-const movieList = document.querySelector('.js-films');
+const movieListNode = document.querySelector('.js-films');
 
-//Функции
-async function fetchData(movieName) {
-  const url = `https://www.omdbapi.com/?s=${movieName}&apikey=${apiKey}`;
-  fetch(url)
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data);
-      // console.log(data.Search);
-      // console.log(data.Search[0]);
-      // console.log(data.Search[0].Title);
-      // console.log(data.Search[0].Year);
-    });
-}
-
-//Выполняемый код
 btnNode.addEventListener('click', function () {
   const movieName = inputNode.value;
-  console.log(movieName);
-  //movieList.innerText = movieName;
-  movieList.innerHTML = `
-  <div class="card">
-          <img src="./img/cover.webp" alt="Cover" class="card__img" />
-          <h3 class="card__title">Обливион</h3>
-          <p class="card__year">2018</p>
-          <p class="card__rate">Рейтинг: 9.2</p>
-        </div>
-  `;
+  const url = `https://www.omdbapi.com/?s=${movieName}&apikey=${apiKey}`;
 
-  const response = fetchData(movieName);
-  // console.log('result= ', response);
+  if (movieName) {
+    movieListNode.innerHTML = '';
+
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        searchResults = data.Search;
+        movieListNode.innerHTML = '';
+
+        if (data.Response === 'True') {
+          data.Search.forEach((movie) => {
+            const movieHTML = `
+        <div class="card">
+                <img src="${movie.Poster}" alt="Cover" class="card__img" />
+                <h3 class="card__title">"${movie.Title}"</h3>
+                <p class="card__year">"${movie.Year}"</p>
+                <p class="card__rate">Рейтинг: "${movie.Type}"</p>
+              </div>
+        `;
+
+            movieListNode.insertAdjacentHTML('beforeend', movieHTML);
+          });
+        }
+      });
+  }
 });
