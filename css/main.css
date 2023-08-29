@@ -20,7 +20,6 @@ body {
 .search {
   padding-top: 50px;
   height: 140px;
-  border: 1px solid #000000;
 }
 
 .add {
@@ -63,8 +62,6 @@ body {
 
   width: 930px;
   min-height: 100vh;
-
-  border-right: 1px solid #162344;
 }
 
 /* .container-right {
