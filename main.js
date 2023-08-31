@@ -24,7 +24,7 @@ btnNode.addEventListener('click', function () {
         movieListNode.innerHTML = '';
 
         if (data.Response === 'True') {
-          data.Search.forEach((movie) => {
+          searchResults.forEach((movie) => {
             const movieHTML = `
         <div class="card">
                 <img src="${movie.Poster}" alt="Cover" class="card__img" />
