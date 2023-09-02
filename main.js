@@ -47,8 +47,8 @@ btnNode.addEventListener('click', function () {
             movieListNode.insertAdjacentHTML('beforeend', movieHTML);
           });
         } else {
-          console.error("Error: Responce received, responce is not array.");
-          movieListNode.innerHTML = `<h3 class="add__button">There is no such movie`;
+          console.log("Error: Responce received, responce is not array.");
+          movieListNode.innerHTML = `<h3 class="add__button">Movie not found!`;
         }
     });
   }  
