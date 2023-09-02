@@ -14,6 +14,10 @@ function clearInput() {
   inputNode.value = '';
 }
 
+function setFocus() {
+  inputNode.focus();
+}
+
 //выполняемый код
 btnNode.addEventListener('click', function () {
   const movieName = inputNode.value.trim();//trim убирает пробелы при вводе названия фильма
@@ -42,13 +46,16 @@ btnNode.addEventListener('click', function () {
               
             movieListNode.insertAdjacentHTML('beforeend', movieHTML);
           });
+        } else {
+          console.error("Error: Responce received, responce is not array.");
+          movieListNode.innerHTML = `<h3 class="add__button">There is no such movie`;
         }
-
     });
   }  
   else {
-    alert('Необходимо ввести название фильма');
+    alert('Enter the name of the movie');
     return;
   }
   clearInput();
+  setFocus();
 });
