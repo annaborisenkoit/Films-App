@@ -1,0 +1,1 @@
+const movieCartNode = document.querySelector('.js-card__wrapper')

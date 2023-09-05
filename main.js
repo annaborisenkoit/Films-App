@@ -8,6 +8,8 @@ const inputNode = document.querySelector('.js-add__title');
 const btnNode = document.querySelector('.js-add__button');
 //список фильмов
 const movieListNode = document.querySelector('.js-films');
+//карточка фильма
+const cardNode = document.querySelector('.js-card');
 
 //функции
 function clearInput() {
@@ -36,7 +38,7 @@ btnNode.addEventListener('click', function () {
           if (data.Response === 'True') {
             searchResults.forEach((movie) => {
               const movieHTML = `
-          <div class="card">
+          <div class="js-card card">
                   <img src="${movie.Poster}" alt="Cover" class="card__img" />
                   <h3 class="card__title">"${movie.Title}"</h3>
                   <p class="card__year">"${movie.Year}"</p>
