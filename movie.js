@@ -34,14 +34,7 @@ const renderMovie = (card) => {
     `;
   };
 
-//   <div  class="js-card card"  id=${movie.imdbID}>
-//                   <img src="${movie.Poster}" alt="Cover" class="card__img" />
-//                   <h3 class="card__title">"${movie.Title}"</h3>
-//                   <p class="card__year">"${movie.Year}"</p>
-//                   <p class="card__rate">Рейтинг: "${movie.Type}"</p>
-//                 </div>
-
-fetch(`https://www.omdbapi.com/?i=${movieID}&apikey=1592a150`)
+fetch(`https://www.omdbapi.com/?i=${movieID}&apikey=${apiKey}`)
    .then((response) => { 
     if (response.ok) { 
       return response.json(); 
