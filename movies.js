@@ -8,8 +8,7 @@ const inputNode = document.querySelector('.js-add__title');
 const btnNode = document.querySelector('.js-add__button');
 //список фильмов
 const movieListNode = document.querySelector('.js-films');
-//карточка фильма
-const cardNode = document.querySelector('.js-card');
+
 
 //функции
 function clearInput() {

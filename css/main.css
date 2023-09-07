@@ -18,7 +18,7 @@ body {
 }
 
 .search {
-  padding-top: 50px;
+  padding-top: 10px; 
   height: 140px;
 }
 
@@ -64,11 +64,17 @@ body {
   min-height: 100vh;
 }
 
-.title-1 {
-  margin-bottom: 30px;
+.title-1,
+.return__link {
+  margin-bottom: 20px;
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
+  color: #ffffff;
+}
+
+.card__link {
+  margin-bottom: 20px;
 }
 
 .films {
@@ -81,7 +87,8 @@ body {
   margin-top: 100px;
 }
 
-.card {
+.card,
+.card__wrapper {
   overflow: hidden;
   padding-bottom: 15px;
   padding-top: 20px;
@@ -101,7 +108,7 @@ body {
 }
 
 .card__img {
-  margin-bottom: 15px;
+  margin: 0 auto;
   width: 200px;
   height: 300px;
   object-fit: cover;
@@ -198,7 +205,8 @@ body {
     width: 100%;
   }
 
-  .card {
+  .card,
+  .card__wrapper {
     width: 100%;
   }
 
