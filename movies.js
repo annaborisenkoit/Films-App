@@ -38,7 +38,7 @@ btnNode.addEventListener('click', function () {
           if (data.Response === 'True') {
             searchResults.forEach((movie) => {
               const movieHTML = `
-                <div class="js-card card">
+                <div  class="js-card card"  id=${movie.imdbID}>
                   <img src="${movie.Poster}" alt="Cover" class="card__img" />
                   <h3 class="card__title">"${movie.Title}"</h3>
                   <p class="card__year">"${movie.Year}"</p>
@@ -61,3 +61,10 @@ btnNode.addEventListener('click', function () {
   clearInput();
   setFocus();
 });
+
+const exportMovie = (event) => {
+  let target = event.target.closest('.card');
+  window.location.href = `movie.html?id=${target.id}`
+}
+
+movieListNode.addEventListener('click', exportMovie)
