@@ -41,7 +41,7 @@ btnNode.addEventListener('click', function () {
                   <img src="${movie.Poster}" alt="Cover" class="card__img" />
                   <h3 class="card__title">"${movie.Title}"</h3>
                   <p class="card__year">"${movie.Year}"</p>
-                  <p class="card__rate">Рейтинг: "${movie.Type}"</p>
+                  <p class="card__rate">Type: "${movie.Type}"</p>
                 </div>
           `;
               
