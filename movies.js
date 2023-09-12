@@ -36,9 +36,14 @@ btnNode.addEventListener('click', function () {
 
           if (data.Response === 'True') {
             searchResults.forEach((movie) => {
+              const posterSrc =
+                movie.Poster !== "N/A"
+                    ? movie.Poster
+                    : "./searchMovie.webp";
+
               const movieHTML = `
                 <div  class="js-card card"  id=${movie.imdbID}>
-                  <img src="${movie.Poster}" alt="Cover" class="card__img" />
+                  <img src="${posterSrc}" alt="Cover" class="card__img" />
                   <h3 class="card__title">"${movie.Title}"</h3>
                   <p class="card__year">"${movie.Year}"</p>
                   <p class="card__rate">Type: "${movie.Type}"</p>

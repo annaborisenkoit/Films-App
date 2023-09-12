@@ -13,10 +13,15 @@ const movieID = params.get("id");
 // const movieCardNode = document.querySelector(".js-card__wrapper");
 
 const renderMovie = (card) => {
+  const cardPosterSrc =
+  card.Poster !== "N/A"
+      ? card.Poster
+      : "./searchMovie.webp";
+
     movieCardNode.innerHTML = `
       <div class="js-card card__description">
           <div class="card__img">
-              <img src=${card.Poster} alt="poster">
+              <img src=${cardPosterSrc} alt="poster">
           </div>
           <div class="card__list">
               <p class="card__title">${card.Title}</p>
